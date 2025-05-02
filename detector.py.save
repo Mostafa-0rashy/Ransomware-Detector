@@ -1,0 +1,20 @@
+import os
+
+def scan_directory(directory):
+    mal_count = 0
+    ben_count = 0
+
+    for filename in os.listdir(directory):
+        if filename.endswith(".exe") or filename.endswith(".dll") or filename.endswith(".enc"):
+            if "enc" in filename.lower():
+                print(f"{filename} : MALICIOUS")
+                mal_count += 1
+            else:
+                print(f"{filename} : BENIGN")
+                ben_count += 1
+
+    print(f"\nTotal Malicious: {mal_count}")
+    print(f"Total Benign: {ben_count}")
+
+if __name__ == "__main__":
+    scan_directory("../samples/ransomware_samples")
