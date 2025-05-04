@@ -30,4 +30,4 @@ def scan_directory(directory):
     print(f"Benign files        : {benign_count}")
 
 if __name__ == "__main__":
-    scan_directory("../samples")
+    scan_directory("samples")
